@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vigenere Cipher</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+        .section {
+            margin-top: 30px;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 15px; /* Added rounded corners */
+        }
+        .btn-primary, .btn-success {
+            border-radius: 20px;
+            width: 100%; /* Ensured full width */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center mt-4 text-primary">Vigenere Cipher</h2>
+        
+        <!-- Encryption Section -->
+        <section class="section">
+            <div class="card p-4">
+                <div class="card-body">
+                    <h4 class="card-title text-secondary">Encryption</h4>
+                    <form method="POST" action="/vigenere/encrypt">
+                        <div class="mb-3">
+                            <label for="inputPlainText" class="form-label">Plain Text:</label>
+                            <input type="text" class="form-control" name="inputPlainText" placeholder="Enter Plain Text" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputKey" class="form-label">Key:</label>
+                            <input type="text" class="form-control" name="inputKey" placeholder="Enter Key" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Encrypt</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Decryption Section -->
+        <section class="section">
+            <div class="card p-4">
+                <div class="card-body">
+                    <h4 class="card-title text-secondary">Decryption</h4>
+                    <form method="POST" action="/vigenere/decrypt">
+                        <div class="mb-3">
+                            <label for="inputCipherText" class="form-label">Cipher Text:</label>
+                            <input type="text" class="form-control" name="inputCipherText" placeholder="Enter Cipher Text" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputKeyCipher" class="form-label">Key:</label>
+                            <input type="text" class="form-control" name="inputKeyCipher" placeholder="Enter Key" required>
+                        </div>
+                        <button type="submit" class="btn btn-success">Decrypt</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
